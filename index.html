@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+</head>
+<body>
+    <header>
+        <h1>Crypto Dashboard</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+    
+    <section class="crypto-container">
+        <input type="text" id="search" placeholder="Search cryptocurrency..." />
+        <h2>Live Cryptocurrency Prices</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Price (USD)</th>
+                    <th>24h Change</th>
+                    <th>Chart</th>
+                </tr>
+            </thead>
+            <tbody id="crypto-table">
+                <!-- Data loads here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="chart-container">
+        <h2>Historical Data (Last 30 Days)</h2>
+        <canvas id="cryptoChart"></canvas>
+    </section>
+</body>
+</html>
+<section class="chart-container">
+    <h2>Historical Data Chart</h2>
+    <select id="crypto-select">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="dogecoin">Dogecoin</option>
+    </select>
+    <canvas id="cryptoChart"></canvas>
+</section>
+<section class="chart-container">
+    <h2>Historical Data Chart</h2>
+    <select id="crypto-select">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="dogecoin">Dogecoin</option>
+    </select>
+    
+    <select id="timeframe-select">
+        <option value="1">24 Hours</option>
+        <option value="7" selected>7 Days</option>
+        <option value="30">30 Days</option>
+    </select>
+
+    <canvas id="cryptoChart"></canvas>
+</section>
+<section class="prediction-container">
+    <h2>Predicted Future Price</h2>
+    <p id="predicted-price">Loading...</p>
+</section>
+<section class="past-predictions">
+    <h2>Past Predictions vs. Actual Prices</h2>
+    <table id="prediction-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Predicted Price (USD)</th>
+                <th>Actual Price (USD)</th>
+                <th>Difference (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</section>
+<div id="alert-box" class="hidden">
+    <p id="alert-message"></p>
+    <button onclick="closeAlert()">Close</button>
+</div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<section class="settings-container">
+    
